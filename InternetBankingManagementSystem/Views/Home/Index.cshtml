@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome to Internet Banking";
+}
+
+<h1>Welcome to Internet Banking</h1>
+
+<p>
+    This is the homepage of our Internet Banking application.
+</p>
+
+<p>
+    @Html.ActionLink("Login", "Login", "Login", new { }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Register", "Register", "Registration", new { }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Open a New Account", "OpenAccount", "Account", new { }, new { @class = "btn btn-info" })
+</p>

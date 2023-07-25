@@ -1,0 +1,29 @@
+﻿
+
+@model InternetBankingManagementSystem.Models.UserLoginModel
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    @Html.LabelFor(model => model.UserID)
+    @Html.TextBoxFor(model => model.UserID)
+    <br />
+
+    @Html.LabelFor(model => model.LoginPassword)
+    @Html.PasswordFor(model => model.LoginPassword)
+    <br />
+
+    <input type="submit" value="Login" />
+
+
+    <p>
+        @Html.ActionLink("Forgot User ID?", "ForgotUserID", "Login")
+        <br />
+        @Html.ActionLink("Forgot Password?", "ForgotPassword", "Login")
+    </p>
+
+
+
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <p>Don't have an account? <a href="@Url.Action("Register", "Registration")">Register here</a>.</p>
+}

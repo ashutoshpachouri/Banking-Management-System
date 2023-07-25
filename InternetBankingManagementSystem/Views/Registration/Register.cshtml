@@ -1,0 +1,44 @@
+﻿@model InternetBankingManagementSystem.Models.UserRegistrationModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+<h2>User Registration</h2>
+
+@using (Html.BeginForm("Register", "Registration", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AccountNumber)
+        @Html.TextBoxFor(model => model.AccountNumber, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LoginPassword)
+        @Html.PasswordFor(model => model.LoginPassword, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConfirmLoginPassword)
+        @Html.PasswordFor(model => model.ConfirmLoginPassword, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TransactionPassword)
+        @Html.PasswordFor(model => model.TransactionPassword, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConfirmTransactionPassword)
+        @Html.PasswordFor(model => model.ConfirmTransactionPassword, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OTP)
+        @Html.TextBoxFor(model => model.OTP, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+}
